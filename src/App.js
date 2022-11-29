@@ -1,8 +1,14 @@
+import SiteHeader from "./components/SiteHeader";
+import ConversionChart from "./components/ConversionChart";
+
 
 function App() {
   return (
-    <div className="App">
-      FUCK
+    <div>
+      <nav>
+        <SiteHeader />
+      </nav>
+      <ConversionChart />
     </div>
   );
 }
