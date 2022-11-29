@@ -6,7 +6,7 @@ function ConversionChart() {
 
     const initialFormValues = {
         usd: '',
-        conversion_value: ''
+        conversion_value: '',
     }
     const [conversions, setConversions] = useState([]);
     const [formValues, setFormValues] = useState(initialFormValues);
@@ -26,7 +26,7 @@ function ConversionChart() {
             conversion_value: formValues.conversion_value
         }
         const maths = mathData.usd * mathData.conversion_value;
-        setConverted(maths);
+        setConverted(Math.round(maths * 100)/100);
     }
 
     function FinalNumbers() {
