@@ -63,4 +63,28 @@ function findCurrencyName(conversion) {
         return "Serbian dinar"
     } else if(conversion === '103.52') {
         return 'Albanian lek'
-    } else if(conversion === )
+    } else if(conversion === '109.754') {
+        return "Japanese yen"
+    } else if(conversion === '126.989') {
+        return 'Icelandic króna'
+    } else if(conversion === '303.141') {
+        return "Hungarian forint"
+    } else if(conversion === '554.531') {
+        return "West African franc"
+    } else if(conversion === '620.785') {
+        return 'Costa Rican colón '
+    } else if(conversion === '758.955') {
+        return 'Chilean peso'
+    } else if(conversion === '1143.958') {
+        return 'Korean won'
+    } else if(conversion === '3743.59') {
+        return 'Colombian peso'
+    } else if(conversion === '3829.978') {
+        return 'Malagasy Ariary'
+    } else if(conversion === '14308.144') {
+        return 'Indonesian rupiah'
+    } else {
+        return "something broke"
+    }
+}
+export default findCurrencyName;

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
+import findCurrencyName from "./currencyName";
 
 function ConversionChart() {
     const URL = 'http://localhost:9000';
@@ -11,6 +12,7 @@ function ConversionChart() {
     const [conversions, setConversions] = useState([]);
     const [formValues, setFormValues] = useState(initialFormValues);
     const [converted, setConverted] = useState('');
+    const [currencyName, setCurrencyName] = useState('');
 
     function handleChange(evt) {
         setFormValues({
@@ -25,6 +27,8 @@ function ConversionChart() {
             usd: formValues.usd,
             conversion_value: formValues.conversion_value
         }
+        setCurrencyName(findCurrencyName(mathData.conversion_value));
+        console.log(currencyName);
         const maths = mathData.usd * mathData.conversion_value;
         setConverted(Math.round(maths * 100)/100);
     }
@@ -37,7 +41,7 @@ function ConversionChart() {
         } else {
             return (
                 <div className='conversions'>
-                    <h4>{`${converted} ` }</h4>
+                    <h4>{`${converted} ${currencyName}` }</h4>
                 </div>
             )
         }
