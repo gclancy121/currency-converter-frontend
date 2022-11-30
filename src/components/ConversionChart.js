@@ -28,7 +28,6 @@ function ConversionChart() {
             conversion_value: formValues.conversion_value
         }
         setCurrencyName(findCurrencyName(mathData.conversion_value));
-        console.log(currencyName);
         const maths = mathData.usd * mathData.conversion_value;
         setConverted(Math.round(maths * 100)/100);
     }
@@ -53,7 +52,7 @@ function ConversionChart() {
         <div>
            <form onSubmit={onSubmit}>
                 <label>United States Dollars</label>
-                <input type='text' name='usd' onChange={handleChange}/>
+                <input type='number' name='usd' onChange={handleChange}/>
                 <label>Convert To</label>
                 <select value={formValues.conversion_value} name='conversion_value' onChange={handleChange}>
                     <option value=''>---Select a Country---</option>
